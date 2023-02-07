@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <div id="input">
+        <div id="form-horizaontal">
+            <div class="row">
+                <div class="col-sm-2">
+                    <span>Fizzy drink:</span>
+                </div>
+                <div class="col-sm-4">
+                    <select style="width:80px; color:green" id="select1" >
+                        <option value="0"></option>
+                        <option value="1">Nuoc Suoi</option>
+                        <option value="2">Coca Cola</option>
+                        <option value="3">7 UP</option>
+                        <option value="4">Pessi</option>
+                        <option value="5">Cam ép</option>
+                        <option value="6">Bò húc</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <span>Fruit</span>
+                </div>
+                <div class="col-sm-4">
+                    <select style="width:100px; color:blueviolet" id="select2">
+                        <option value="0"></option>
+                        <option value="1">Trái cây nhỏ</option>
+                        <option value="2">Trái cây lớn</option>
+                        <option value="3">Bưởi</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <form name="frm">
+            <p>
+                <button type="button" onclick="Buy()">Buy</button>
+                <button type="button">Cancel</button>
+            </p>
+        </form>
+        <table id="tbl">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </table>
+        <div id="form-horizaontal">
+            <div class="row">
+                <div class="col-sm-2">
+                    Total:
+                    <span id="result"></span>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        var id=0;
+        function Buy(){
+            id++
+            var a=document.getElementById('select1');
+            var value1=a.options[a.selectedIndex].value;
+            var b=document.getElementById('select2');
+            var value2=b.options[b.selectedIndex].value;
+            var total;
+            var price1, price2;
+            var row="<tr>";
+            if (value1!="0")
+            { 
+                row+="<td>"+value1+"</td>";
+                if (value1=="1"){
+                    price1=15000;
+                }
+                else if(value1=="6"){
+                    price1=20000;
+                }
+                else{
+                    price1=17000;
+                }
+                row+="<td>"+price1+"</td>";
+                row+="</tr>"        
+            }
+            else{
+                price1=0
+            }
+            if (value2!="0")
+            {   row+="<tr>";
+                row+="<td>"+value2+"</td>";
+                if (value2="1"){
+                    price2=99000;
+                }
+                else if(value1="2"){
+                    price2=129000;
+                }
+                else{
+                    price2=189000;
+                }      
+                row+="<td>"+price2+"</td>";
+                row+="</tr>"      
+            }
+            else{
+                price2=0
+            }
+            
+            document.getElementById("tbl").innerHTML+=row;
+            total=parseInt(price1+price2);
+
+            document.getElementById("result").innerHTML=total;
+           
+        }
+
+    </script>
+</body>
+</html>

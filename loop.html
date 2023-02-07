@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .square,.square1{
+            height: 20px;
+            width: 20px;
+            float: left;
+            border: 1px solid gray;
+            margin-left: 5px;
+            margin-bottom: 5px;
+         
+        }
+        .square{
+            background-color: yellow;   
+        }
+        .square1{
+            background-color: royalblue;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>JavaScript For Loop</h2>
+    <!-- <button onclick="Square()">Grid_square</button> -->
+
+<p id="demo"></p>
+
+<script>
+
+//     let i, len, text;
+// var ngang=prompt("input column numbers: ")
+// var doc=prompt("input row numbers: ")
+// for (i = 0, text = ""; i < doc; i++) {
+//   for (j=0;j< ngang;j++){
+//     if(i%2==0){
+//         document.write("<div class='square'></div>")
+//     }
+//     else {
+//         document.write("<div class='square1'></div>")
+//     }
+//   }
+//   document.write("<div style='clear:both'></div>")
+
+// }
+// var number=prompt("Nhap so luong sinh vien");
+// var sinhVien=[];
+// for (i=0;i<number;i++){
+//     var student={
+//         name:prompt("Name:"),
+//         year:prompt("Year"),
+//         gender:prompt("gender"),
+//         hometown:prompt("Hometown")
+//     }
+//     sinhVien=sinhVien+student;
+// };
+// document.write(sinhVien)
+// for (j=0;j<sinhVien.length;i++){
+//     for (var x in student){
+//     document.write(student[x]+"<br>");
+    
+// }
+// document.write("<hr>");
+// }
+
+// var sinhVien={
+//     name: "Le Tran Anh Minh",
+//     year: 2000,
+//     gender: "nữ",
+//     hometown: "Da Nang"
+//     }
+
+
+var sinhVien=[
+    { name: "Le Tran Anh Minh",
+    year: 2000,
+    gender: "nữ",
+    hometown: "Da Nang"},
+    { name: "Le Tran Anh Minh",
+    year: 2000,
+    gender: "nữ",
+    hometown: "Da Nang"}
+]
+for(var j in sinhVien){
+    document.write(sinhVien[j].name+"<br>"+sinhVien[j].year+"<br>"+sinhVien[j].gender+"<br>"+sinhVien[j].hometown);
+    document.write("<hr>");
+}
+
+// for (j=0;j<sinhVien.length;i++){
+//     for (var x in sinhVien[j]){
+    
+    
+// }
+// document.write("<hr>");
+// }
+
+</script>
+</body>
+</html>

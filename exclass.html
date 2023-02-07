@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>A function is triggered when the user is pressing a key field.</p>
+    <input type="text" onkeypress="myFunction()">
+    <script>
+        function myFunction(){
+            alert("you pressed a key inside the input field");
+        }
+    </script><br>
+    <p>A function is triggered when the user releases a key in the field. The function outputs the actual key/letter that was releasesed.</p>
+    enter first number: <input type="text" id="lname" onkeyup="myFunctionname()"> <br>
+    enter second number:<input type="text" id="fname" onkeyup="myFunctionname()">
+    <p>Sum: <span id="demo"></span></p>
+    <script>
+        function myFunctionname(){
+            var x= parseInt(document.getElementById("lname").value);
+            var y= parseInt(document.getElementById("fname").value);
+            document.getElementById("demo").innerHTML =x+y;
+        }
+    </script><br>
+    <p>Click the button to display time-based greeting</p>
+    Enter a number to check: <input type="text" id="nhap">
+    <button onclick="FunctionNhap()">Try it</button>
+    <p><span id="kq"></span></p>
+    <script>
+        function FunctionNhap(){
+            var x=document.getElementById("nhap").value;
+            var greeting;
+            var color;
+            if (x==0){
+                greeting="Ban duoc 0 diem";
+                color='yellow'
+            }
+            else if(x>0){
+                greeting="Day la so duong"
+                color='green'
+            }
+            else{
+                greeting="Day la so am"
+                color='white'
+            };
+            document.getElementById("kq").innerHTML=greeting;
+            document.getElementById("kq").style.backgroundColor=color;
+        }
+    </script> <br>
+    
+
+</body>
+</html>

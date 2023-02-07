@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text{
+            background-color: yellow;
+            display: flex;
+            align-items: flex-end;
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    <span id="text"></span>
+    <hr>
+    <p>Fruit:</p>
+    <span id="fruits"></span>
+    <hr>
+    <p>
+        The push method appends a new element to an array
+    </p>
+    <button onclick="myFunction()">Add to Array</button>
+    <span id="demo"></span>
+    <hr>
+    Name:
+    <input type="text" id="name">
+</br>
+</br>
+Ten cua cac ong do la:
+<input type="text" id="hienthi">
+</br>
+</br>
+<input type="button" value="OK" onclick="getName()">
+    <script language="javascript">
+        a=""
+        const mang=["Hoc","lap","trinh","tai","freetuts.net"];
+        for(i=0;i<mang.length;i++){
+            a+=mang[i]+" ";
+        }
+        document.getElementById("text").innerHTML=a;
+
+        var fruit=["Banana","Strawberry","Mango","Water Melon","Apple","Orange","Lemon","Blueberry","Pineapple","Coconut","Peach","Kiwi","Durian"];
+        text="<ul>"
+        for(i=0;i<fruit.length;i++){
+            text+="<li>"+fruit[i]+"</li>";
+        }
+        text+="</ul>";
+        document.getElementById("fruits").innerHTML=text;
+        function myFunction(){
+            // fruit.push("Cherry");   // Day phan tu vao vi tri cuoi mang 
+            fruit[fruit.length]="Cherry";
+
+            // fruit.splice           //Đẩy vào vị trí thứ 2 trong mảng, và 0 xóa ptu nào sau nó (Chèn chứ k thay thế)
+            fruit.splice(2,0,"Ổi","Vải","Mận");
+
+            //fruit.shift            //Xoa ptu đầu tiên của mảng
+            fruit.shift();
+            
+            //fruit.pop             //Xoa ptu cuoi mang
+            fruit.pop();            // Đã xóa Cherry
+
+            //fruit.unshift        //Chen ptu vào đầu mảng
+            fruit.unshift("Mơ");
+            document.getElementById("demo").innerHTML=fruit;
+        }
+
+        var array=[];
+        function getName(){
+            var a=document.getElementById("name").value;
+            array.push(a);
+            document.getElementById("hienthi").value=array;
+        }
+    </script>
+</body>
+</html>
